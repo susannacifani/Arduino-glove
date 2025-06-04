@@ -1,0 +1,259 @@
+/* Importa il font Inter da Google Fonts */
+@import url('https://fonts.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif; /* Utilizzo del font Inter */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8; /* Colore di sfondo leggero */
+    color: #333;
+    position: relative; /* Aggiungi questa linea: serve per il posizionamento assoluto dei figli */
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px; /* Aumentato il margine inferiore */
+}
+
+.button-container {
+    display: flex;
+    gap: 20px; /* Spazio tra i bottoni */
+    margin-bottom: 20px;
+}
+
+input[type="number"] { /* Puoi rimuovere questo se non usi input numerici */
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Bordi arrotondati */
+    width: 150px;
+    text-align: center;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+button {
+    padding: 12px 25px; /* Dimensione leggermente aumentata */
+    background-color: #3498db; /* Colore blu accattivante */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Bordi arrotondati */
+    cursor: pointer;
+    font-size: 18px; /* Dimensione del font aumentata */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #2980b9; /* Scuro al passaggio del mouse */
+    transform: translateY(-2px); /* Leggero sollevamento */
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15); /* Ombra più pronunciata */
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+p#message { /* Aggiornato l'ID per il messaggio di feedback */
+    display: none;
+    margin-top: 25px;
+    font-size: 1.1em; /* Dimensione del font leggermente ridotta */
+    color: #555;
+    background-color: #ecf0f1;
+    padding: 15px 25px;
+    border-radius: 8px; /* Bordi arrotondati */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-height: 20px; /* Per mantenere lo spazio anche senza messaggio */
+}
+
+/* Nuove regole per il bottone "Torna alla Home" */
+button#backToHomeBtn {
+    position: absolute; /* Posizionamento assoluto rispetto al body */
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    box-shadow: none;
+    background-color: #6c7a89;
+}
+
+button#backToHomeBtn:hover {
+    background-color: #5b6875;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Stili per il contenitore del menu a discesa e del bottone */
+.profile-selection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: #ecf0f1;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-selection label {
+    font-size: 1.1em;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Stili per il menu a discesa (select) */
+select#profileSelect {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    padding: 12px 20px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+    background-image: url('data:image/svg+xml;utf8,<svg fill="#3498db" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+/* Stili al passaggio del mouse (hover) */
+select#profileSelect:hover {
+    border-color: #2980b9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Stili quando il menu a discesa è attivo (focus) */
+select#profileSelect:focus {
+    border-color: #1abc9c;
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.3);
+}
+
+/* Stili per le opzioni del menu a discesa */
+select#profileSelect option {
+    font-family: 'Inter', sans-serif;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Stili per il bottone di caricamento associato al menu a discesa */
+.profile-selection button {
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.profile-selection button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.profile-selection button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Disabilita il select se non ci sono profili */
+select#profileSelect:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    border-color: #ccc;
+    color: #888;
+}
+
+/* ============================================== */
+/* NUOVI STILI PER IL CAMPO DI CREAZIONE PROFILO */
+/* ============================================== */
+
+/* Contenitore per la creazione del profilo, usa gli stessi stili del .profile-selection */
+.profile-creation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: #ecf0f1;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* Label per il campo di creazione profilo, stili simili alla label del select */
+.profile-creation label {
+    font-size: 1.1em;
+    color: #2c3e50;
+    font-weight: bold;
+    white-space: nowrap; /* Impedisce al testo di andare a capo */
+}
+
+/* Campo di input per il nome del nuovo profilo */
+.profile-creation input[type="text"] {
+    flex-grow: 1; /* Permette all'input di occupare lo spazio disponibile */
+    padding: 12px 15px; /* Padding coerente con il select */
+    border: 2px solid #3498db; /* Bordo blu come il select */
+    border-radius: 8px; /* Bordi arrotondati come il select */
+    background-color: #ffffff; /* Sfondo bianco */
+    color: #333; /* Colore del testo */
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em; /* Dimensione del font come il select */
+    outline: none; /* Rimuove il bordo di focus predefinito del browser */
+    transition: all 0.3s ease; /* Animazione fluida */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Ombra leggera */
+}
+
+/* Stile del placeholder */
+.profile-creation input[type="text"]::placeholder {
+    color: #aab;
+    font-style: italic;
+}
+
+/* Stile del campo di input al focus (quando l'utente ci clicca sopra) */
+.profile-creation input[type="text"]:focus {
+    border-color: #1abc9c; /* Stesso colore di focus del select */
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.3); /* Stesso effetto glow del select */
+}
+
+/* Stile per il pulsante all'interno del contenitore di creazione profilo */
+.profile-creation button {
+    padding: 12px 25px; /* Mantiene la dimensione del pulsante generale */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.profile-creation button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.profile-creation button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

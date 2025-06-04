@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+    <h1>Create New Profile</h1>
+
+    <div class="profile-creation">
+        <label for="newProfileName">Profile Name:</label>
+        <input type="text" id="newProfileName" placeholder="Enter new profile name">
+        <button onclick="nuovoProfilo()">Create</button>
+    </div>
+
+    <p id="message"></p>
+    <!-- <button id="backToHomeBtn" onclick="window.location.href='index.html'">Back</button> -->
+    <button id="backToHomeBtn" onclick="window.location.href='index.html'">Back</button>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+        eel.expose(updateCalibrationStatus);
+        function updateCalibrationStatus(msg) {
+            document.getElementById('message').innerText = msg;
+        }
+    </script>
+</body>
+</html>

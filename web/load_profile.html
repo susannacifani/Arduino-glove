@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load your profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+    <h1>Load your profile</h1>
+
+    <div class="profile-selection">
+        <label for="profileSelect">Choose a profile:</label>
+        <select id="profileSelect">
+            <option value="" disabled selected>-- Select a profile --</option>
+            </select>
+        <button onclick="loadSelectedProfile()">Select</button>
+    </div>
+
+    <p id="message"></p>
+    <!-- <button id="backToHomeBtn" onclick="window.location.href='index.html'">Back</button> -->
+    <button id="backToHomeBtn" onclick="window.location.href='index.html'">Back</button>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+        // Chiamata all'avvio della pagina per popolare il dropdown
+        document.addEventListener('DOMContentLoaded', populateProfileDropdown);
+    </script>
+</body>
+</html>
